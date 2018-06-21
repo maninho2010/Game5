@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" th:href="@{/css/padrao.css}">
+    <title>Cadastro de palavra</title>
+</head>
+<body>
+
+	<th:block th:replace="fragments/header :: nav"></th:block>
+	
+	<div class="container-fluid col-sm-8 col-md-5 mt-5">
+		<!-- MENSAGENS DE VALIDAÇÃO -->
+		<div  th:if="${not #strings.isEmpty(mensagem)}" class="alert alert-success alert-dismissible fade show" role="alert">
+		    <span th:text="${mensagem}"></span>
+		    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		        <span aria-hidden="true">&times;</span>
+		    </button>
+		</div>
+		<!--./ MENSAGENS DE VALIDAÇÃO -->
+		
+		<form method="POST" th:object="${palavra}">
+			
+				<div class="row">
+					<div class="form-group col-sm-12">
+						<label for="nome" class="control-label">Nome</label>
+						<input id="nome" type="text" class="form-control" th:field="*{nome}" th:errorclass="is-invalid">
+						<div class="invalid-feedback">
+	                        <th:block th:each="erro : ${#fields.detailedErrors('nome')}">
+	                            <div><span th:text="${erro.message}"></span></div>
+	                        </th:block>
+                    	</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-sm-12" style="margin-bottom: 0px!important">
+						<select th:field="*{tema}" class="form-control" th:errorclass="is-invalid">
+							<option value="">Selecione o tema</option>
+							<option th:each="tema : ${temas}" th:value="${tema.id}" th:text="${tema.nome}">Selecione o tema</option>
+						</select>
+					</div>
+					<div class="form-group col" >
+						<a th:href="@{/temas/novo}">adicionar</a>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-sm-12">	
+						<select th:field="*{nivel}" class="form-control" th:errorclass="is-invalid">
+							<option value="">Selecione o nível</option>
+							<option th:each="nivel : ${niveis}" th:value="${nivel}" th:text="${nivel.descricao}">Selecione o nível</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="mt-2">
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="reset" class="btn btn-light">Cancelar</button>
+				</div>
+				
+		</form>
+	</div>
+	
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

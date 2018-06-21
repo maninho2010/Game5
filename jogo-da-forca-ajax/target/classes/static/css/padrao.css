@@ -1,0 +1,11 @@
+.header-title{
+	margin: 0px !important;
+	padding: 0px !important;
+	box-sizing: border-box !important;
+	line-height: inherit;
+	font-size: 2em;
+}
+
+body{
+	font-family: sans-serif;
+}

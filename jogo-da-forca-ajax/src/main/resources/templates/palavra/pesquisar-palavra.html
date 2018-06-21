@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" th:href="@{/css/padrao.css}">
+	<title>Jogo da forca</title>
+</head>
+<body>
+
+	
+	<th:block th:replace="fragments/header :: nav"></th:block>
+	
+	<main class="container-fluid">
+		<table class="table table-hover">
+			<thead class="text-dark">
+				<tr>
+					<th>Nome</th>
+					<th>Tema</th>
+					<th>Nivel</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${#lists.isEmpty(palavras)}">
+					<td colspan="4">Não tem nenhuma palavra cadastrada</td>
+				<tr>
+				<tr th:each="palavra : ${palavras}">
+					<td th:text="${palavra.nome}"></td>
+					<td th:text="${palavra.tema.nome}"></td>
+					<td th:text="${palavra.nivel.descricao}"></td>
+					<td><a th:href="@{/palavras/delete/{id}(id=${palavra.id})}"><i class="fas fa-trash-alt"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

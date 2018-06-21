@@ -1,0 +1,38 @@
+<header class="text-light mb-5" th:fragment="nav">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	
+		<div class="container">
+			<a class="navbar-brand" th:href="@{/jogar}">Game5</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+		  	</button>
+		  	
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" th:href="@{/jogar}">Jogar <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Cadastrar
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownCadastrar">
+						  <a class="dropdown-item" th:href="@{/palavras/novo}">Palavra</a>
+						  <a class="dropdown-item" th:href="@{/temas/novo}">Tema</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPesquisar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Pesquisar
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownPesquisar">
+						  <a class="dropdown-item" th:href="@{/palavras}">Palavra</a>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		
+	</nav>
+</header>

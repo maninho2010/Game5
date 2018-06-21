@@ -1,0 +1,35 @@
+body{
+	min-height: 100vh;
+	background: lightgreen;
+}
+
+.game{
+	font-family: 'Press Start 2P', cursive;
+}
+
+.palavra{
+	padding-top: 70px;
+	letter-spacing: 10px;
+	font-size: 2rem;;
+}
+
+.box-status-game{
+	color: green;
+	font-size: 1.2rem;
+}
+
+.chute-box{
+	margin-top: 200px;
+}
+
+
+@media(max-width: 480px){
+	.palavra{
+		padding-bottom: 0px;
+		font-size: 1.1rem;
+	}
+	
+	.chute-box{
+		margin-top: 150px;
+	}
+}
