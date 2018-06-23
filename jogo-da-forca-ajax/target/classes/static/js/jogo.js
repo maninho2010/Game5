@@ -5,6 +5,7 @@ $(function(){
 	
 	if(qtdPalavrasRegistradas > 0 ){
 		var palavra = "";
+		var palavraUnderlines = $('.palavra-underlines');
 		var botaoChute = $('#btn-chute');
 		var inputChute = $('#input-chute');
 		var spanTema = $('#tema');
@@ -62,6 +63,7 @@ $(function(){
 		
 		inputChute.val('');
 		palavra = resposta.nome;
+		palavraUnderlines.text(resposta.underlines);
 		spanTema.text(resposta.tema.nome);
 		spanNivel.text(resposta.nivel);
 		spanChances.text('5');
