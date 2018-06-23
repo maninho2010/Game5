@@ -1,5 +1,11 @@
 package com.game5.model.enums;
 
+/*
+ * @author Pedro Vieira
+ * Enum criado para 
+ * classficar nível de dificuldade da palavra a ser advinhada
+ * 
+ */
 public enum NivelEnum {
 	MUITOFACIL("Muito Fácil"),
 	FACIL("Fácil"),

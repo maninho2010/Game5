@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.game5.repository.PalavraRepository;
-
+/*
+ * @author Felipe Sousa
+ * Classe para mapear endpoint /jogar
+ */
 @Controller
 @RequestMapping("/jogar")
 public class JogoController {

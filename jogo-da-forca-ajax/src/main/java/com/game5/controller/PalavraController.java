@@ -21,7 +21,10 @@ import com.game5.model.enums.NivelEnum;
 import com.game5.repository.PalavraRepository;
 import com.game5.repository.TemaRepository;
 import com.game5.service.PalavraService;
-
+/*
+ * @author Felipe Sousa
+ * Classe para mapear endpoint /palavras
+ */
 @Controller
 @RequestMapping("/palavras")
 public class PalavraController {

@@ -10,6 +10,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/*
+ * @author Emanuel Honorio
+ * @deprecated
+ * Funcionalidade dica foi descontinuada
+ */
 @Entity
 public class Dica implements Serializable{
 	private static final long serialVersionUID = 1L;

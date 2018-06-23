@@ -19,6 +19,13 @@ import org.springframework.util.StringUtils;
 
 import com.game5.model.enums.NivelEnum;
 
+
+/*
+ * @author Emanuel Honorio
+ * Classe que mapeia a tabela Palavra na base de dados
+ * 
+ */
+
 @Entity
 public class Palavra implements Serializable {
 	

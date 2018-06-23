@@ -14,7 +14,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.game5.exception.TemaJaCadastradoException;
 import com.game5.model.Tema;
 import com.game5.service.TemaService;
-
+/*
+ * author Felipe Sousa
+ * Classe para mapear endpoint /temas
+ */
 @Controller
 @RequestMapping("/temas")
 public class TemaController {

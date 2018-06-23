@@ -12,7 +12,11 @@ import javax.persistence.PrePersist;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+/*
+ * @author Alexandre Dias
+ * Classe que mapeia a tabela Tema na base de dados
+ * 
+ */
 @Entity
 public class Tema implements Serializable {
 	

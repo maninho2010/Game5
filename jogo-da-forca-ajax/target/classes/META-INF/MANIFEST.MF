@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: jogo-da-forca-ajax
 Implementation-Version: 1.0.0
-Built-By: Arthur Pontes
+Built-By: alexb
 Implementation-Vendor-Id: com.game5
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_171
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/jogo-da-forca-ajax
 Created-By: Maven Integration for Eclipse
