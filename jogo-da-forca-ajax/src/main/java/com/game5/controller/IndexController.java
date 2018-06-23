@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class IndexController {
 	
+	
 	@GetMapping
 	public ModelAndView home() {
 		return new ModelAndView("redirect:/jogar");

@@ -25,6 +25,11 @@ public class TemaController {
 	@Autowired
 	private TemaService temaService;
 	
+	/**
+	 * 
+	 * @param tema para ser feito o binding no cadastro, o próprio spring injeta ela
+	 * @return view
+	 */
 	@GetMapping("/novo")
 	public ModelAndView novo(Tema tema) {
 		ModelAndView mv = new ModelAndView("tema/cadastro-tema");
@@ -32,6 +37,15 @@ public class TemaController {
 		return mv;
 	}
 	
+	/**
+	 * Mapeia o post do cadastro de temas e salva o Tema válido
+	 * 
+	 * @param tema com o binding, o próprio spring injeta
+	 * @param result verifica se o tema é válido, o próprio spring injeta
+	 * @param attributes attributes adiciona objetos a view mesmo após o redirect, o próprio spring injeta
+	 * 
+	 * @return redireciona para a página de cadastro que está mapeada em /temas/novo
+	 */
 	@PostMapping("/novo")
 	public ModelAndView cadastrar(@Valid Tema tema, BindingResult result, RedirectAttributes attributes) {
 		

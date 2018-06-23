@@ -38,6 +38,12 @@ public class PalavraController {
 	@Autowired
 	private TemaRepository temaRepository;
 	
+	/**
+	 * 
+	 * Mapeia a pesquisa de palavras
+	 * 
+	 * @return view com a lista de palavras cadastradas
+	 */
 	@GetMapping
 	public ModelAndView pesquisar() {
 		ModelAndView mv = new ModelAndView("palavra/pesquisar-palavra");
@@ -45,11 +51,24 @@ public class PalavraController {
 		return mv;
 	}
 	
+	/**
+	 * 
+	 * Lida com requisições assíncronas para retornar uma palavra aleátoria
+	 * 
+	 * @return palavra cadastrada aleatória em json e status 200
+	 */
 	@GetMapping(value = "/random",  produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity<?> randomPalavra() {
 		return ResponseEntity.ok(palavraRepository.randomPalavra());
 	}
 	
+	/**
+	 * 
+	 * Mapeia a página de cadastro de palavras
+	 * 
+	 * @param palavra para ser feito o binding no cadastro, o próprio spring injeta ela
+	 * @return view com a palavra para o binding, niveis e temas existentes
+	 */
 	@GetMapping("/novo")
 	public ModelAndView novo(Palavra palavra) {
 		ModelAndView mv = new ModelAndView("palavra/cadastro-palavra");
@@ -58,6 +77,16 @@ public class PalavraController {
 		return mv;
 	}
 	
+	/**
+	 * 
+	 * Mapeia o post do cadastro de palavras e salva a Palavra válida
+	 * 
+	 * @param palavra com o binding, o próprio spring injeta
+	 * @param result verifica se a palavra é válida, o próprio spring injeta
+	 * @param attributes adiciona objetos a view mesmo após o redirect, o próprio spring injeta
+	 * 
+	 * @return redireciona para a página de cadastro que está mapeada em /palavras/novo
+	 */
 	@PostMapping("/novo")
 	public ModelAndView salvar(@Valid Palavra palavra, BindingResult result, RedirectAttributes attributes) {
 		
@@ -77,6 +106,11 @@ public class PalavraController {
 		return new ModelAndView("redirect:/palavras/novo");
 	}
 	
+	/**
+	 * 
+	 * @param id da palavra a ser deletada
+	 * @return redireciona para a pesquisa de palavras mapeada em /palavras
+	 */
 	@GetMapping("/delete/{id}")
 	public ModelAndView delete(@PathVariable Long id) {
 		Palavra palavra = new Palavra();
